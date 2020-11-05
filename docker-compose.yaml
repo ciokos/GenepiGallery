@@ -1,7 +1,7 @@
 version: '3'
 services:
   strapi:
-    container_name: strapi
+    container_name: gallery-strapi
     image: strapi/strapi
     environment:
       DATABASE_CLIENT: postgres
@@ -18,7 +18,7 @@ services:
       - '1337:1337'
 
   postgres:
-    container_name: postgres
+    container_name: gallery-postgres
     image: postgres
     environment:
       POSTGRES_USER: strapi
@@ -30,8 +30,8 @@ services:
       - '5432:5432'
 
   frontend-service:
-    container_name: frontend
-    build: ./frontend
+    container_name: gallery-frontend
+    image: node:14.15.0-alpine3.11
     command: tail -F /dev/null #  npm install && /bin/sh -c "npm start" 
     working_dir: /var/www/html
     volumes:
