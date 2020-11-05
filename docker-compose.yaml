@@ -25,3 +25,17 @@ services:
       - ./data:/var/lib/postgresql/data
     ports:
       - '5432:5432'
+
+  frontend-service:
+    container_name: frontend
+    build: ./frontend
+    command: tail -F /dev/null #  npm install && /bin/sh -c "npm start" 
+    working_dir: /var/www/html
+    volumes:
+        - ./frontend:/var/www/html
+    ports:
+        - 3000:3000
+    links:
+        - strapi
+    depends_on:
+        - strapi
