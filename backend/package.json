@@ -1,5 +1,5 @@
 {
-  "name": "app",
+  "name": "backend",
   "private": true,
   "version": "0.1.0",
   "description": "A Strapi application",
@@ -21,13 +21,13 @@
     "strapi-plugin-upload": "3.2.5",
     "strapi-connector-bookshelf": "3.2.5",
     "knex": "<0.20.0",
-    "pg": "latest"
+    "sqlite3": "latest"
   },
   "author": {
     "name": "A Strapi developer"
   },
   "strapi": {
-    "uuid": "f0dd95c1-3ddb-4590-8f50-050df73101e2"
+    "uuid": "abe9bb3c-d743-4577-b563-2b970737327c"
   },
   "engines": {
     "node": ">=10.0.0",
