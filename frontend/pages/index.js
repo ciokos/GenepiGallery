@@ -56,7 +56,7 @@ export default function Home() {
             </Card>
           </Col>
           <Col>
-          <Card onClick={() => {window.location="https://www.google.com"}}>
+          <Card onClick={() => {window.open("https://www.google.com", "_blank")}}>
                 <img className="card-img-top" src="/img3.jpg"></img>
                 <Card.Body>
                     <Card.Title class="card-title">Amazing Data Three</Card.Title>
