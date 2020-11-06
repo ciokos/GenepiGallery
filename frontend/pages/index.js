@@ -1,5 +1,5 @@
 import React from 'react'
-import { Navbar, Nav, Form, Button, FormControl, Card, Container } from 'react-bootstrap'
+import { Navbar, Nav, Form, Button, FormControl, Card, Container, Row, Col } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Head from 'next/head'
 import styles from'../styles/Home.module.css'
@@ -24,17 +24,48 @@ export default function Home() {
         </Form>
       </Navbar>
 
-      <Container>
+      <Container className={styles.container}>
+        <Row>
+          <Col>
+            <Card>
+                <img class="card-img-top" src="./img1.jpg"></img>
+                <Card.Body>
+                    <Card.Title class="card-title">Amazing Data One</Card.Title>
+                    <Card.Text class="card-text">Lorem ipsum dolor sit amet, adipisicing elit. Eos rerum dolorum, est voluptatem modi accusantium perspiciatis ...</Card.Text>
+                </Card.Body>
+                {/* style="font-size: 12px; border-top: 1px dashed; text-align: center" */}
+                <Card.Footer>
+                        <a href="#" className="card-link muted float-right mx-0"><i class="far fa-comments"></i>Read More</a>
+                </Card.Footer>
+            </Card>
+          </Col>
+          <Col>
+            <Card>
+              asdas
+            </Card>
+          </Col>
+          <Col>
+            <Card>
+              asdas
+            </Card>
+          </Col>
+        </Row>
+        <style jsx global>{`
+        .col {
+          padding: 0px;
+        }
+        
+        .card {
+          margin: 10px;
+          
+          transition: margin 0.2s;
+        }
 
-        <Card className={styles.card}>
-          asdas
-        </Card>
-        <Card className={styles.card}>
-          asdas
-        </Card>
-        <Card className={styles.card}>
-          asdas
-        </Card>
+        .col:hover .card {
+          margin: 6px;
+          
+        }
+      `}</style>
       </Container>
       {/* <footer className={styles.footer}>
         <a

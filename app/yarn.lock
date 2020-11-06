@@ -1088,7 +1088,7 @@
   resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.2.5.tgz#8eed982e2ee6f7f4e44c253e12962980791efd46"
   integrity sha512-6U71C2Wp7r5XtFtQzYrW5iKFT67OixrSxjI4MptCHzdSVlgabczzqLe0ZSgnub/5Kp4hSbpDB1tMytZY9pwxxA==
 
-"@formatjs/ecma402-abstract@^1.3.0":
+"@formatjs/ecma402-abstract@1.3.0":
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/@formatjs/ecma402-abstract/-/ecma402-abstract-1.3.0.tgz#c9aa2a71173e61c6c3a965c47b2affa073776267"
   integrity sha512-Bu9rvgsFH7LVVGf2v3jImowP7GJ2RkkLQdeBEu/mmT4xFWtKJN6JwYRYjB3MNsnmKLmGiCCDyNTSLQaM/Ji0YQ==
@@ -1110,11 +1110,11 @@
     "@formatjs/intl-utils" "^2.3.0"
 
 "@formatjs/intl-numberformat@^5.5.2":
-  version "5.7.2"
-  resolved "https://registry.yarnpkg.com/@formatjs/intl-numberformat/-/intl-numberformat-5.7.2.tgz#32a312782c560660159c7511e1fc686d12f0d943"
-  integrity sha512-3GZMGJfzVdzUDxjZ4Ch/mY3ASRVsAp56KI363osvV60CDK9tcTViK1mtGEgXaGpBMJfws90eG3Hg2yt/tjQ/sQ==
+  version "5.7.3"
+  resolved "https://registry.yarnpkg.com/@formatjs/intl-numberformat/-/intl-numberformat-5.7.3.tgz#e91b669a0acd0d928ce4b961395c8a27681f03c4"
+  integrity sha512-fXquGont9q6OfjnCUP9/lOqcH2HW7CMALsxPNBNV2sKqxqSKRdeI0mr3bmk/lKA2sUs20UwaMCUT5QzoKpOb8A==
   dependencies:
-    "@formatjs/ecma402-abstract" "^1.3.0"
+    "@formatjs/ecma402-abstract" "1.3.0"
     tslib "^2.0.1"
 
 "@formatjs/intl-relativetimeformat@^4.5.12":
@@ -3485,9 +3485,9 @@ ee-first@1.1.1:
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
 electron-to-chromium@^1.3.585:
-  version "1.3.588"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.588.tgz#c6515571737bfb42678115a5eaa818384593a9a5"
-  integrity sha512-0zr+ZfytnLeJZxGgmEpPTcItu5Mm4A5zHPZXLfHcGp0mdsk95rmD7ePNewYtK1yIdLbk8Z1U2oTRRfOtR4gbYg==
+  version "1.3.589"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.589.tgz#bd26183ed8697dde6ac19acbc16a3bf33b1f8220"
+  integrity sha512-rQItBTFnol20HaaLm26UgSUduX7iGerwW7pEYX17MB1tI6LzFajiLV7iZ7LVcUcsN/7HrZUoCLrBauChy/IqEg==
 
 elliptic@^6.5.3:
   version "6.5.3"
@@ -4088,16 +4088,16 @@ formidable@^1.1.1:
   integrity sha512-V8gLm+41I/8kguQ4/o1D3RIHRmhYFG4pnNyonvua+40rqcEmT4+V71yaZ3B457xbbgCsCfjSPi65u/W6vK1U5Q==
 
 formik@^2.1.4:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/formik/-/formik-2.2.1.tgz#e09747569e44ffc17263541d2e732cc6568208dc"
-  integrity sha512-N/8Q1yGlXHibyrM5CyKtC85V8U+mxY04zSfakpyR1e6KpaIC4+A4yo30NBARRprkFoxoT1EV+yK8bo5tjXxfyg==
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/formik/-/formik-2.2.2.tgz#0b9ed3e5232e6e65f2a7b19b84c64787ce6a9a42"
+  integrity sha512-zAanhv7phAq1zcLw17j4u9BL2C1T/3LP/zZKE9vS9AmxzvpRpDBF9PrNgobAqoEipj+4M3QBT/j/iIyDIDnBvg==
   dependencies:
     deepmerge "^2.1.1"
     hoist-non-react-statics "^3.3.0"
     lodash "^4.17.14"
     lodash-es "^4.17.14"
     react-fast-compare "^2.0.1"
-    scheduler "^0.18.0"
+    scheduler "^0.20.1"
     tiny-warning "^1.0.2"
     tslib "^1.10.0"
 
@@ -6314,7 +6314,7 @@ nan@^2.12.1:
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.14.2.tgz#f5376400695168f4cc694ac9393d0c9585eeea19"
   integrity sha512-M2ufzIiINKCuDfBSAUr1vWQ+vuVcA9kqx8JJUsbQi6yf1uGRyb7HfpdfUr5qLXf3B/t8dPvcjhKMmlfnP47EzQ==
 
-nanoid@^3.1.15:
+nanoid@^3.1.16:
   version "3.1.16"
   resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.1.16.tgz#b21f0a7d031196faf75314d7c65d36352beeef64"
   integrity sha512-+AK8MN0WHji40lj8AEuwLOvLSbWYApQpre/aFJZD71r43wVRLrOYS4FmJOPQYon1TqB462RzrrxlfA74XRES8w==
@@ -7114,13 +7114,13 @@ postcss@^7.0.14, postcss@^7.0.32, postcss@^7.0.5, postcss@^7.0.6:
     supports-color "^6.1.0"
 
 postcss@^8.0.2:
-  version "8.1.4"
-  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.1.4.tgz#356dfef367a70f3d04347f74560c85846e20e4c1"
-  integrity sha512-LfqcwgMq9LOd8pX7K2+r2HPitlIGC5p6PoZhVELlqhh2YGDVcXKpkCseqan73Hrdik6nBd2OvoDPUaP/oMj9hQ==
+  version "8.1.6"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.1.6.tgz#b022ba2cfb8701da234d073ed3128c5a384c35ff"
+  integrity sha512-JuifSl4h8dJ70SiMXKjzCxhalE6p2TnMHuq9G8ftyXj2jg6SXzqCsEuxMj9RkmJoO5D+Z9YrWunNkxqpRT02qg==
   dependencies:
     colorette "^1.2.1"
     line-column "^1.0.2"
-    nanoid "^3.1.15"
+    nanoid "^3.1.16"
     source-map "^0.6.1"
 
 postgres-array@~2.0.0:
@@ -8252,18 +8252,18 @@ saslprep@^1.0.0:
   dependencies:
     sparse-bitfield "^3.0.3"
 
-scheduler@^0.18.0:
-  version "0.18.0"
-  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.18.0.tgz#5901ad6659bc1d8f3fdaf36eb7a67b0d6746b1c4"
-  integrity sha512-agTSHR1Nbfi6ulI0kYNK0203joW2Y5W4po4l+v03tOoiJKpTBbxpNhWDvqc/4IcOw+KLmSiQLTasZ4cab2/UWQ==
-  dependencies:
-    loose-envify "^1.1.0"
-    object-assign "^4.1.1"
-
 scheduler@^0.19.1:
   version "0.19.1"
   resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.19.1.tgz#4f3e2ed2c1a7d65681f4c854fa8c5a1ccb40f196"
   integrity sha512-n/zwRWRYSUj0/3g/otKDRPMh6qv2SYMWNq85IEa8iZyAv8od9zDYpGSnpBEjNgcMNq6Scbu5KfIPxNF72R/2EA==
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+
+scheduler@^0.20.1:
+  version "0.20.1"
+  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.20.1.tgz#da0b907e24026b01181ecbc75efdc7f27b5a000c"
+  integrity sha512-LKTe+2xNJBNxu/QhHvDR14wUXHRQbVY5ZOYpOGWRzhydZUqrLb2JBvLPY7cAqFmqrWuDED0Mjk7013SZiOz6Bw==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
