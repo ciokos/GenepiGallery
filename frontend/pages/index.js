@@ -12,41 +12,90 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar bg="dark" variant="dark">
-        <Navbar.Brand href="#home">Navbar</Navbar.Brand>
         <Nav className="mr-auto">
-          <Nav.Link href="/about">Home</Nav.Link>
-          <Nav.Link href="#features">Features</Nav.Link>
-          <Nav.Link href="#pricing">Pricing</Nav.Link>
+          <Nav.Link href="#pricing"></Nav.Link>
+          <Nav.Link href="/about">Genepi</Nav.Link>
         </Nav>
-        <Form inline>
-          <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-          <Button variant="outline-info">Search</Button>
-        </Form>
+        <style jsx global>{`
+        .img {
+          width: 10px;
+        }
+
+        .navbar {
+          justify-content: center;
+        }
+
+        .navbar-nav {
+          margin-right: 0px !important;
+        }
+      `}</style>
       </Navbar>
 
       <Container className={styles.container}>
         <Row>
           <Col>
             <Card>
-                <img class="card-img-top" src="./img1.jpg"></img>
+                <img className="card-img-top" src="/img1.jpg"></img>
                 <Card.Body>
                     <Card.Title class="card-title">Amazing Data One</Card.Title>
                     <Card.Text class="card-text">Lorem ipsum dolor sit amet, adipisicing elit. Eos rerum dolorum, est voluptatem modi accusantium perspiciatis ...</Card.Text>
                 </Card.Body>
                 {/* style="font-size: 12px; border-top: 1px dashed; text-align: center" */}
-                <Card.Footer>
+                {/* <Card.Footer>
                         <a href="#" className="card-link muted float-right mx-0"><i class="far fa-comments"></i>Read More</a>
-                </Card.Footer>
+                </Card.Footer> */}
             </Card>
           </Col>
           <Col>
-            <Card>
-              asdas
+          <Card>
+                <img className="card-img-top" src="/img2.jpg"></img>
+                <Card.Body>
+                    <Card.Title class="card-title">Amazing Data Two</Card.Title>
+                    <Card.Text class="card-text">Lorem ipsum dolor sit amet, adipisicing elit. Eos rerum dolorum, est voluptatem modi accusantium perspiciatis ...</Card.Text>
+                </Card.Body>
             </Card>
           </Col>
           <Col>
+          <Card onClick={() => {window.location="https://www.google.com"}}>
+                <img className="card-img-top" src="/img3.jpg"></img>
+                <Card.Body>
+                    <Card.Title class="card-title">Amazing Data Three</Card.Title>
+                    <Card.Text class="card-text">Lorem ipsum dolor sit amet, adipisicing elit. Eos rerum dolorum, est voluptatem modi accusantium perspiciatis ...</Card.Text>
+                </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col>
             <Card>
-              asdas
+                <img className="card-img-top" src="/img4.jpg"></img>
+                <Card.Body>
+                    <Card.Title class="card-title">Amazing Data Four</Card.Title>
+                    <Card.Text class="card-text">Lorem ipsum dolor sit amet, adipisicing elit. Eos rerum dolorum, est voluptatem modi accusantium perspiciatis ...</Card.Text>
+                </Card.Body>
+                {/* style="font-size: 12px; border-top: 1px dashed; text-align: center" */}
+                {/* <Card.Footer>
+                        <a href="#" className="card-link muted float-right mx-0"><i class="far fa-comments"></i>Read More</a>
+                </Card.Footer> */}
+            </Card>
+          </Col>
+          <Col>
+          <Card>
+                <img className="card-img-top" src="/img5.jpg"></img>
+                <Card.Body>
+                    <Card.Title class="card-title">Amazing Data Five</Card.Title>
+                    <Card.Text class="card-text">Lorem ipsum dolor sit amet, adipisicing elit. Eos rerum dolorum, est voluptatem modi accusantium perspiciatis ...</Card.Text>
+                </Card.Body>
+            </Card>
+          </Col>
+          <Col>
+          <Card onClick={() => {window.location="https://www.google.com"}}>
+                <img className="card-img-top" src="/img6.jpg"></img>
+                <Card.Body>
+                    <Card.Title class="card-title">Amazing Data Six</Card.Title>
+                    <Card.Text class="card-text">Lorem ipsum dolor sit amet, adipisicing elit. Eos rerum dolorum, est voluptatem modi accusantium perspiciatis ...</Card.Text>
+                </Card.Body>
             </Card>
           </Col>
         </Row>
@@ -57,13 +106,13 @@ export default function Home() {
         
         .card {
           margin: 10px;
-          
-          transition: margin 0.2s;
+          cursor: pointer;
+          transition: margin 0.2s, height 0.2s;
         }
 
         .col:hover .card {
           margin: 6px;
-          
+          height: 100;
         }
       `}</style>
       </Container>
