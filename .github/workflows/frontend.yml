@@ -2,12 +2,11 @@
 name: Deploy to Heroku (Frontend)
 
 on:
-  push:
-    branches:
-      - main
+  repository_dispatch:
+    types: [trigger-workflow-2]
     paths:
-      - "frontend/**"
-      - ".github/workflows/frontend.yml"
+    - "frontend/**"
+    - ".github/workflows/frontend.yml"
 
 jobs:
   deploy:
