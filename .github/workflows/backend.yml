@@ -4,30 +4,12 @@ on:
   push:
     branches:
       - main
-      - dev
     paths:
       - "backend/**"
       - ".github/workflows/backend.yml"
 
 jobs:
-  build:
-    name: Building and testing
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js
-      uses: actions/setup-node@v1
-      with:
-        node-version: '12.x'
-    - run: npm install
-    - run: npm run build --if-present
-    - run: npm test
-      env:
-        CI: true
-
   deploy:
-    if: github.ref == 'refs/heads/main'
-    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
