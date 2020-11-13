@@ -6,7 +6,7 @@ import styles from'../styles/Home.module.css'
 
 
 Home.getInitialProps = async function() {
-  const res = await fetch(process.env.STRAPI + '/projects');
+  const res = await fetch('http://genepi-gallery-backend.herokuapp.com/projects');
   const data = await res.json();
   return {
     projects: data
@@ -19,7 +19,7 @@ export default function Home(props) {
     if (props.projects[x] != undefined) {
       return(
         <Card onClick={() => {window.open(props.projects[x].url, "_blank")}}>
-          <div class="embed-responsive embed-responsive-16by9">
+          <div className="embed-responsive embed-responsive-16by9">
             <img className="card-img-top embed-responsive-item" src={props.projects[x].image_url}></img>
           </div>
           <Card.Body>
@@ -32,13 +32,13 @@ export default function Home(props) {
   }
 
   return (
-    <div id="wrapper">
+    <div>
       <Head>
         <title>Genepi Gallery</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       
-      <div className="body">
+      <div id="wrapper">
       <Navbar bg="dark" variant="dark">
         <Nav className="mr-auto">
           <Nav.Link href="#pricing"></Nav.Link>
@@ -51,10 +51,10 @@ export default function Home(props) {
 
         main {
           position: relative;
-          height: 100%;
+          min-height: 95vh;
         }
 
-        html, body, #__next, #wrapper {
+        html, #__next, #wrapper {
           height: 100%;
         }
 
@@ -92,7 +92,7 @@ export default function Home(props) {
             if(i%3 == 0)
             return(
 
-              <Row>
+              <Row key={i}>
                     <Col className="col-12 col-sm-12 col-md-4">
                       {createCard(i)}
                     </Col>
