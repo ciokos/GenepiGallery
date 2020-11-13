@@ -20,7 +20,10 @@ export default function Home(props) {
       return(
         <Card onClick={() => {window.open(props.projects[x].url, "_blank")}}>
           <div >
-            <img className="card-img-top" src={props.projects[x].image_url}></img>
+          <div class="embed-responsive embed-responsive-16by9">
+          <img className="card-img-top embed-responsive-item" src={props.projects[x].image_url}></img>
+
+          </div>
             </div>
             <Card.Body>
                 <Card.Title className="card-title">{props.projects[x].name}</Card.Title>
@@ -34,7 +37,7 @@ export default function Home(props) {
   return (
     <div>
       <Head>
-        <title>Create Next App</title>
+        <title>Genepi Gallery</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar bg="dark" variant="dark">
