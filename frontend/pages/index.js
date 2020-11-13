@@ -1,10 +1,36 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Navbar, Nav, Form, Button, FormControl, Card, Container, Row, Col } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Head from 'next/head'
 import styles from'../styles/Home.module.css'
 
-export default function Home() {
+
+Home.getInitialProps = async function() {
+  const res = await fetch('http://genepi-gallery-backend.herokuapp.com/projects');
+  const data = await res.json();
+  return {
+    projects: data
+  };
+}
+
+export default function Home(props) {
+
+  const createCard = x => {
+    if (props.projects[x] != undefined) {
+      return(
+        <Card onClick={() => {window.open(props.projects[x].url, "_blank")}}>
+          <div >
+            <img className="card-img-top" src={props.projects[x].image_url}></img>
+            </div>
+            <Card.Body>
+                <Card.Title className="card-title">{props.projects[x].name}</Card.Title>
+                <Card.Text className="card-text">{props.projects[x].description}</Card.Text>
+            </Card.Body>
+        </Card>
+      )
+    }
+  }
+
   return (
     <div>
       <Head>
@@ -32,100 +58,51 @@ export default function Home() {
       </Navbar>
 
       <Container className={styles.container}>
-        <Row>
-          <Col>
-            <Card>
-                <img className="card-img-top" src="/img1.jpg"></img>
-                <Card.Body>
-                    <Card.Title class="card-title">Amazing Data One</Card.Title>
-                    <Card.Text class="card-text">Lorem ipsum dolor sit amet, adipisicing elit. Eos rerum dolorum, est voluptatem modi accusantium perspiciatis ...</Card.Text>
-                </Card.Body>
-                {/* style="font-size: 12px; border-top: 1px dashed; text-align: center" */}
-                {/* <Card.Footer>
-                        <a href="#" className="card-link muted float-right mx-0"><i class="far fa-comments"></i>Read More</a>
-                </Card.Footer> */}
-            </Card>
-          </Col>
-          <Col>
-          <Card>
-                <img className="card-img-top" src="/img2.jpg"></img>
-                <Card.Body>
-                    <Card.Title class="card-title">Amazing Data Two</Card.Title>
-                    <Card.Text class="card-text">Lorem ipsum dolor sit amet, adipisicing elit. Eos rerum dolorum, est voluptatem modi accusantium perspiciatis ...</Card.Text>
-                </Card.Body>
-            </Card>
-          </Col>
-          <Col>
-          <Card onClick={() => {window.open("https://www.google.com", "_blank")}}>
-                <img className="card-img-top" src="/img3.jpg"></img>
-                <Card.Body>
-                    <Card.Title class="card-title">Amazing Data Three</Card.Title>
-                    <Card.Text class="card-text">Lorem ipsum dolor sit amet, adipisicing elit. Eos rerum dolorum, est voluptatem modi accusantium perspiciatis ...</Card.Text>
-                </Card.Body>
-            </Card>
-          </Col>
-        </Row>
+        {props.projects.map(function(element, i) {
 
-        <Row>
-          <Col>
-            <Card>
-                <img className="card-img-top" src="/img4.jpg"></img>
-                <Card.Body>
-                    <Card.Title class="card-title">Amazing Data Four</Card.Title>
-                    <Card.Text class="card-text">Lorem ipsum dolor sit amet, adipisicing elit. Eos rerum dolorum, est voluptatem modi accusantium perspiciatis ...</Card.Text>
-                </Card.Body>
-                {/* style="font-size: 12px; border-top: 1px dashed; text-align: center" */}
-                {/* <Card.Footer>
-                        <a href="#" className="card-link muted float-right mx-0"><i class="far fa-comments"></i>Read More</a>
-                </Card.Footer> */}
-            </Card>
-          </Col>
-          <Col>
-          <Card>
-                <img className="card-img-top" src="/img5.jpg"></img>
-                <Card.Body>
-                    <Card.Title class="card-title">Amazing Data Five</Card.Title>
-                    <Card.Text class="card-text">Lorem ipsum dolor sit amet, adipisicing elit. Eos rerum dolorum, est voluptatem modi accusantium perspiciatis ...</Card.Text>
-                </Card.Body>
-            </Card>
-          </Col>
-          <Col>
-          <Card onClick={() => {window.location="https://www.google.com"}}>
-                <img className="card-img-top" src="/img6.jpg"></img>
-                <Card.Body>
-                    <Card.Title class="card-title">Amazing Data Six</Card.Title>
-                    <Card.Text class="card-text">Lorem ipsum dolor sit amet, adipisicing elit. Eos rerum dolorum, est voluptatem modi accusantium perspiciatis ...</Card.Text>
-                </Card.Body>
-            </Card>
-          </Col>
-        </Row>
+          if(i%3 == 0)
+          return(
+
+            <Row>
+                  <Col className="col-12 col-sm-12 col-md-4">
+                    {createCard(i)}
+                  </Col>
+                  <Col className="col-12 col-sm-12 col-md-4">
+                    {createCard(i+1)}
+                  </Col>
+                  <Col className="col-12 col-sm-12 col-md-4">
+                    {createCard(i+2)}
+                  </Col>
+            </Row>
+            )})}
+        
         <style jsx global>{`
         .col {
           padding: 0px;
+          margin-bottom: 12px;
+          transition: margin-bottom 0.2s;
         }
         
         .card {
           margin: 10px;
+          margin-bottom: 0px;
           cursor: pointer;
+          height: 100%;
           transition: margin 0.2s, height 0.2s;
+        }
+
+        .col:hover {
+          margin-bottom: 0px;
         }
 
         .col:hover .card {
           margin: 6px;
-          height: 100;
+          height: 100%;
         }
+
+        
       `}</style>
       </Container>
-      {/* <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer> */}
 
     </div>
   )
