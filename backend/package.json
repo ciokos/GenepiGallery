@@ -2,18 +2,12 @@
   "name": "backend",
   "private": true,
   "version": "0.1.0",
-  "description": "A Strapi application",
+  "description": "A Strapi application for Genepi gallery project",
   "scripts": {
     "develop": "strapi develop",
     "start": "strapi start",
     "build": "strapi build",
-    "strapi": "strapi",
-    "test": "jest --forceExit --detectOpenHandles"
-  },
-  "devDependencies": {
-    "jest": "^26.6.3",
-    "sqlite3": "^5.0.0",
-    "supertest": "^6.0.1"
+    "strapi": "strapi"
   },
   "dependencies": {
     "knex": "<0.20.0",
@@ -30,18 +24,13 @@
     "strapi-utils": "3.2.5"
   },
   "author": {
-    "name": "A Strapi developer"
+    "name": "Wojciech Ciok"
   },
+  "contributors": [{
+    "name": "Gábor Máté Gulyás"
+  }],
   "strapi": {
     "uuid": "abe9bb3c-d743-4577-b563-2b970737327c"
-  },
-  "jest": {
-    "testPathIgnorePatterns": [
-      "/node_modules/",
-      ".tmp",
-      ".cache"
-    ],
-    "testEnvironment": "node"
   },
   "engines": {
     "node": ">=10.0.0",
