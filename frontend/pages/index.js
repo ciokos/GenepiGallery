@@ -32,17 +32,32 @@ export default function Home(props) {
   }
 
   return (
-    <div>
+    <div id="wrapper">
       <Head>
         <title>Genepi Gallery</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      
+      <div className="body">
       <Navbar bg="dark" variant="dark">
         <Nav className="mr-auto">
           <Nav.Link href="#pricing"></Nav.Link>
           <Nav.Link href="/about">Genepi</Nav.Link>
         </Nav>
         <style jsx global>{`
+        .container {
+          padding-bottom: 60px;
+        }
+
+        main {
+          position: relative;
+          height: 100%;
+        }
+
+        html, body, #__next, #wrapper {
+          height: 100%;
+        }
+
         .img {
           width: 10px;
         }
@@ -54,45 +69,74 @@ export default function Home(props) {
         .navbar-nav {
           margin-right: 0px !important;
         }
+
+        #footer {
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          height: 60px;
+          background: #343a40;
+      }
+
+      #footer .footer-copyright {
+          color: rgba(255,255,255,.5);
+      }
+      
       `}</style>
       </Navbar>
 
-      <Container className={styles.container}>
-        {props.projects.map(function(element, i) {
+      <main>
+        <Container className={styles.container}>
+          {props.projects.map(function(element, i) {
 
-          if(i%3 == 0)
-          return(
+            if(i%3 == 0)
+            return(
 
-            <Row>
-                  <Col className="col-12 col-sm-12 col-md-4">
-                    {createCard(i)}
-                  </Col>
-                  <Col className="col-12 col-sm-12 col-md-4">
-                    {createCard(i+1)}
-                  </Col>
-                  <Col className="col-12 col-sm-12 col-md-4">
-                    {createCard(i+2)}
-                  </Col>
-            </Row>
-            )})}
-        
-        <style jsx global>{`
-        .col {
-          padding: 10px;
-          transition: padding 0.2s;
-        }
-        
-        .card {
-          cursor: pointer;
-          height: 100%;
-        }
+              <Row>
+                    <Col className="col-12 col-sm-12 col-md-4">
+                      {createCard(i)}
+                    </Col>
+                    <Col className="col-12 col-sm-12 col-md-4">
+                      {createCard(i+1)}
+                    </Col>
+                    <Col className="col-12 col-sm-12 col-md-4">
+                      {createCard(i+2)}
+                    </Col>
+              </Row>
+              )})}
+          
+          <style jsx global>{`
+          .col {
+            padding: 10px;
+            transition: padding 0.2s;
+          }
+          
+          .card {
+            cursor: pointer;
+            height: 100%;
+          }
 
-        .col:hover {
-          padding: 6px;
-        }
-      `}</style>
-      </Container>
+          .col:hover {
+            padding: 6px;
+          }
 
+          .card-text {
+            transition: padding 0.2s;
+          }
+
+          .col:hover .card-text {
+            padding: 6px;
+          }
+        `}</style>
+        </Container>
+
+      <footer id="footer" className="container-fluid text-center text-md-left">
+        <div className="footer-copyright text-center py-3">© 2020 Copyright: 
+          <a href="https://www.google.com/">This link also redirects to Google</a>
+        </div>
+      </footer>
+      </main>
+      </div>
     </div>
   )
 }
