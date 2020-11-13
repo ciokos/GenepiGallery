@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import { Navbar, Nav, Form, Button, FormControl, Card, Container, Row, Col } from 'react-bootstrap'
+import React from 'react'
+import { Navbar, Nav, Card, Container, Row, Col } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Head from 'next/head'
 import styles from'../styles/Home.module.css'
