@@ -12,7 +12,8 @@
   },
   "attributes": {
     "description": {
-      "type": "text"
+      "type": "text",
+      "maxLength": 200
     },
     "name": {
       "type": "string"
