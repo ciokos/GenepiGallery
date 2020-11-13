@@ -6,7 +6,7 @@ import styles from'../styles/Home.module.css'
 
 
 Home.getInitialProps = async function() {
-  const res = await fetch('http://genepi-gallery-backend.herokuapp.com/projects');
+  const res = await fetch(process.env.STRAPI + '/projects');
   const data = await res.json();
   return {
     projects: data
