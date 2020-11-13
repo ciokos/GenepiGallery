@@ -125,7 +125,7 @@ export default function Home(props) {
           }
 
           .col:hover .card-text {
-            padding: 6px;
+            padding: 4px;
           }
         `}</style>
         </Container>
