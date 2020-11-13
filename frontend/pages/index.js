@@ -19,16 +19,13 @@ export default function Home(props) {
     if (props.projects[x] != undefined) {
       return(
         <Card onClick={() => {window.open(props.projects[x].url, "_blank")}}>
-          <div >
           <div class="embed-responsive embed-responsive-16by9">
-          <img className="card-img-top embed-responsive-item" src={props.projects[x].image_url}></img>
-
+            <img className="card-img-top embed-responsive-item" src={props.projects[x].image_url}></img>
           </div>
-            </div>
-            <Card.Body>
-                <Card.Title className="card-title">{props.projects[x].name}</Card.Title>
-                <Card.Text className="card-text">{props.projects[x].description}</Card.Text>
-            </Card.Body>
+          <Card.Body>
+              <Card.Title className="card-title">{props.projects[x].name}</Card.Title>
+              <Card.Text className="card-text">{props.projects[x].description}</Card.Text>
+          </Card.Body>
         </Card>
       )
     }
@@ -81,29 +78,18 @@ export default function Home(props) {
         
         <style jsx global>{`
         .col {
-          padding: 0px;
-          margin-bottom: 12px;
-          transition: margin-bottom 0.2s;
+          padding: 10px;
+          transition: padding 0.2s;
         }
         
         .card {
-          margin: 10px;
-          margin-bottom: 0px;
           cursor: pointer;
           height: 100%;
-          transition: margin 0.2s, height 0.2s;
         }
 
         .col:hover {
-          margin-bottom: 0px;
+          padding: 6px;
         }
-
-        .col:hover .card {
-          margin: 6px;
-          height: 100%;
-        }
-
-        
       `}</style>
       </Container>
 
